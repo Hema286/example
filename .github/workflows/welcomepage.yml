@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and deploy
+        run: |
+          npm run build
+          npm run deploy
+
+      - name: Verify deployment
+        uses: actions/deployments@v1
+        with:
+          url: http://127.0.0.1:5500/index.html
