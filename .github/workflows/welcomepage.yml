@@ -21,4 +21,4 @@ jobs:
       - name: Verify deployment
         uses: actions/verify-deployment@v1
         with:
-          url: http://127.0.0.1:5500/index.html
+          url: C:\Users\saikuhe\Desktop\welcome page\index.html
